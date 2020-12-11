@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Calculate (A^B)/B!
+
+int main()
+{
+    int A,B;
+    double pow=1,fact=1,result;
+
+    printf("please enter the A: ");
+    scanf("%d",&A);
+    printf("please enter the B: ");
+    scanf("%d",&B);
+
+    for(int i=1; i<=B;i++)
+    {
+        pow = pow*A;
+        fact = fact*i;
+    }
+
+    result = pow/fact;
+    printf("(A^B)/B! = %f ",result);
+
+    return 0;
+}

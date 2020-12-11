@@ -1,0 +1,87 @@
+#include <stdio.h>
+#pragma warning(disable:4996)
+#include <string.h>
+
+
+
+typedef struct Student{
+	int number;
+	char name[20];
+	char surname[50];
+	float midGrade;
+	float finGrade;
+	float avgGrade;
+	char letterGrade[2];
+}SR;
+
+void DisplayStudent(SR[],int);
+void InsertStudents(SR[],int);
+
+int main(void)
+{
+	SR s[999];
+	int size;
+	printf("Enter number of students = ");
+	scanf("%d", &size);
+
+	InsertStudents(s,size);
+	printf("\n");
+    DisplayStudent(s,size);
+
+
+
+	system("pause");
+}
+
+void InsertStudents(SR s[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		printf("Enter the number = ");
+		scanf("%d", &s[i].number);
+		printf("Enter the name = ");
+		scanf("%s", &s[i].name);
+		printf("Enter the surname = ");
+		scanf("%s", &s[i].surname);
+		printf("Enter the midterm grade = ");
+		scanf("%f", &s[i].midGrade);
+		printf("Enter the final grade = ");
+		scanf("%f", &s[i].finGrade);
+		s[i].avgGrade = s[i].midGrade * 0.4 + s[i].finGrade * 0.6;
+		if (s[i].avgGrade > 90)
+		{
+			strcpy(s[i].letterGrade, "A1");
+		}
+		else if (s[i].avgGrade > 80)
+		{
+			strcpy(s[i].letterGrade, "A2");
+		}
+		else if (s[i].avgGrade > 70)
+		{
+			strcpy(s[i].letterGrade, "A3");
+		}
+		else if (s[i].avgGrade > 60)
+		{
+			strcpy(s[i].letterGrade, "B1");
+		}
+		else if (s[i].avgGrade > 50)
+		{
+			strcpy(s[i].letterGrade, "B2");
+		}
+	}
+}
+
+void DisplayStudent(SR s[],int size)
+{
+    for(int i=0; i<size;i++)
+{
+	printf("Number = %d\n", s[i].number);
+	printf("Name = %s\n", s[i].name);
+	printf("Surname = %s\n", s[i].surname);
+	printf("Midterm grade = %f\n", s[i].midGrade);
+	printf("Final grade = %f\n", s[i].finGrade);
+	printf("Average grade = %f\n", s[i].avgGrade);
+	printf("Letter grade = %s\n", s[i].letterGrade);
+	printf("\n");
+}
+}////////////////////////////////////////////////

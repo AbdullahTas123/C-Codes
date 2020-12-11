@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Co-Prime
+
+int main()
+{
+    int A,B,cp=0;
+
+    printf("pls enter the A: ");
+    scanf("%d",&A);
+    printf("pls enter the B: ");
+    scanf("%d",&B);
+
+    if(A==B)
+    {
+        printf("not CoPrime");
+    }
+    else if (A<B)
+    {
+        for(int i=2;i<=A;i++)
+        {
+            if(A%i==0 && B%i==0)
+            {
+                cp++;
+            }
+        }
+    }
+    else if(A>B)
+    {
+        for(int i=2;i<=B;i++)
+        {
+            if(A%i==0 && B%i==0)
+            {
+                cp++;
+            }
+        }
+    }
+    if(cp==0)
+    {
+        printf("CoPrime");
+    }
+    else
+    {
+        printf("not CoPrime");
+    }
+
+    return 0;
+}

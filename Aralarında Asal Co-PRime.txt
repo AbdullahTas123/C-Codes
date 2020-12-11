@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{   int A,B,p=0,c=0;
+    printf("ENter A:\n");
+    scanf("%d",&A);
+    printf("Enter B:\n");
+    scanf("%d",&B);
+    if(A==B)
+    {
+        printf("Not CoPrime");
+    }
+    else if(A<B)
+    {
+        for(int i=2;i<=A;i++)
+        {
+            if(A%i==0 && B%i==0)
+            {
+                p++;
+            }
+        }
+        if(p==0)
+        {
+            printf("CoPrime");
+        }
+        else
+        {
+            printf("Not CoPrime");
+        }
+    }
+    else if(B<A)
+    {
+        for(int i=2;i<=B;i++)
+        {
+            if(A%i==0 && B%i==0)
+            {
+                c++;
+            }
+        }
+        if(c==0)
+        {
+            printf("CoPrime");
+        }
+        else
+        {
+            printf("No CoPrime");
+        }
+    }
+    system("pause");
+}

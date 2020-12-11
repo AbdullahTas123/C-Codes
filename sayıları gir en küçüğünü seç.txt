@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,i,x,smallest;
+    printf("Please enter n : \n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Please enter the numbers : \n");
+        scanf("%d",&x);
+        if(i==0)
+        {
+            smallest=x;
+        }
+        else if(smallest>x)
+        {
+            smallest=x;
+        }
+    }
+    printf("Smallest number is %d \n",smallest);
+    system("pause");
+    return 0;
+}

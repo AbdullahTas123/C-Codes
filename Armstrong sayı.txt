@@ -1,0 +1,46 @@
+ #include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,con,con1,con2,con3,con4,sum,A,B;
+    printf("Please enter A : \n ");
+    scanf("%d",&A);
+    printf("Please enter B : \n ");
+    scanf("%d",&B);
+    for(i=A;i<=B;i++)
+    {
+        con=i;
+        con1=i;
+        j=0;
+        while(con>=1)
+        {
+            con=con/10;
+            j++;
+        }
+        sum=0;
+        while(con1>=1)
+        {
+            con2=con1%10;
+            con1=con1/10;
+            con3=1;
+            con4=1;
+            while(con3<=j)
+            {
+                con4=con4*con2;
+                con3++;
+            }
+            sum=sum+con4;
+        }
+        if(sum==i)
+        {
+            printf("%d : is an armstrong number \n",i);
+        }
+
+
+    }
+
+
+    system("pause");
+    return 0;
+}

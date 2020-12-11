@@ -1,0 +1,27 @@
+int main()
+{
+	int num1, num2;
+begining:
+	printf("Please enter number 1:");
+	scanf("%d", &num1);
+	if (num1 == 0 || num1 < 0)
+	{
+		printf("Please enter again cos your number equal 0 or smaller than 0 your number is %d\n", num1);
+		goto begining;
+	}
+		second:
+		printf("Please enter number 2");
+		scanf("%d", &num2);
+		if (num2 == 0 || num2 < 0)
+		{
+			printf("Please enter again cos your number equal 0 or smaller than 0 your number is %d\n", num2);
+			goto second;
+		}
+		else
+		{
+			int result = num1 + num2;
+			printf("Your result is %d", result);
+		}
+		return 0;
+
+}

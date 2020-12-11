@@ -1,0 +1,40 @@
+#include <stdio.h>
+#pragma warning(disable:4996)
+int IsPrimeNumber(int,int);// declaration of the function IsPrimeNumber
+
+int main(void)
+{
+ int i, x, y, j, p;
+ printf("Please the first number:\n");
+ scanf("%d", &x);
+ printf("Please the second number:\n");
+ scanf("%d", &y);
+ for (j = x; j <= y; j++)
+  {
+    IsPrimeNumber(j,p);
+
+  }
+ system("pause");
+}
+// definition of the function IsPrimeNumber
+
+
+int IsPrimeNumber(int num,int p)
+{
+   p=0;
+   for(int i=1; i<=num; i++)
+   {
+      if(num%i==0)
+      {
+         p++;
+      }
+   }
+   if(p==2)
+   {
+      printf("%d is a prime number\n",num);
+   }
+   else
+   {
+      printf("%d is not a prime number\n",num);
+   }
+}

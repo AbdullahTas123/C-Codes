@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int A,B,Z=0;
+    printf("please enter A:\n");
+    scanf("%d",&A);
+    printf("please enter B:\n");
+    scanf("%d",&B);
+    while(B<=A)
+    {
+       A=A-B;
+       Z=Z+1;
+    }
+    printf("Quotient:\n %d\n",Z);
+    printf("Remainder:\n %d\n",A);
+
+    system("pause");
+    return 0;
+}

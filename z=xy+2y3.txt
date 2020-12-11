@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,y,i=0,total;
+    float z,sum3,sum2=1;
+    printf("Please enter the x : \n ");
+    scanf("%d",&x);
+    printf("Please enter the y: \n ");
+    scanf("%d",&y);
+    if(y>0)
+    {
+
+    while(i<y)
+    {
+        sum2=x*sum2;
+        i++;
+    }
+
+
+    }
+    else if(y<0)
+    {
+        while(i>y)
+        {
+        sum2=sum2*1/x;
+        i--;
+        }
+    }
+    else
+    {
+        z=1;
+
+    }
+    total=2*y*y*y;
+    z=sum2+total;
+    printf("%.2f \n",z);
+    system("pause");
+    return 0;
+}

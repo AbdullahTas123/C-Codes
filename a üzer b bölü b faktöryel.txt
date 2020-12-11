@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int A,B,i;
+    double sum2=0,fact=1,sum=1;
+    printf("Please enter the A :  \n");
+    scanf("%d",&A);
+    printf("Please enter the B : \n");
+    scanf("%d",&B);
+    for(i=1;i<=B;i++)
+    {
+        sum=sum*A;
+        fact=fact*i;
+        sum2=sum/fact+sum2;
+
+    }
+    printf("Result: %f \n",sum2);
+
+    return 0;
+}

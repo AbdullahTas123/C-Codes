@@ -1,0 +1,105 @@
+#include <stdio.h>
+#pragma warning (disable:4996)
+
+int main(void)
+{
+	int matrix[99][99];
+	int dimension, flag = 0;
+	printf("Enter the matrix dimension = ");
+	scanf("%d", &dimension);
+
+	for (int i = 0; i < dimension; i++)
+	{
+		for (int j = 0; j < dimension; j++)
+		{
+			printf("Enter a value = ");
+			scanf("%d", &matrix[i][j]);
+		}
+	}
+	printf("\n\n");
+	int diagSum = 0;
+	int reverseDiagSum = 0;
+	for (int i = 0; i < dimension; i++)
+	{
+		diagSum = diagSum + matrix[i][i];
+		reverseDiagSum = reverseDiagSum + matrix[i][dimension - i - 1];
+	}
+	if (reverseDiagSum == diagSum)
+	{
+		int rowSum, columnSum;
+		for (int i = 0; i < dimension; i++)
+		{
+			rowSum = 0;
+			columnSum = 0;
+			for (int j = 0; j < dimension; j++)
+			{
+				rowSum += matrix[i][j];
+				columnSum += matrix[j][i];
+			}
+			if (!(diagSum == rowSum && diagSum == columnSum))
+			{
+				printf("Not magic\n");
+				flag = 1;
+				break;
+			}
+		}
+	}
+	else
+	{
+		printf("Not magic\n");
+		flag = 1;
+	}
+	if (flag == 0)
+	{
+		printf("Magic\n");
+	}
+
+
+
+
+
+
+	/*int matrix[3][5];
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			printf("Enter a value = ");
+			scanf("%d", &matrix[i][j]);
+		}
+	}
+
+	printf("\n\n");
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			printf("%d - ", matrix[i][j]);
+		}
+		printf("\n");
+	}*/
+	/*int array[20];
+	int stuNum, sum = 0;
+	float avg;
+	printf("Enter student number = ");
+	scanf("%d", &stuNum);
+
+	for (int i = 0; i < stuNum; i++)
+	{
+		printf("Enter a grade = ");
+		scanf("%d", &array[i]);
+		sum = sum + array[i];
+	}
+	printf("\n\n");
+	avg = sum / stuNum;
+	for (int i = 0; i < stuNum; i++)
+	{
+		if (array[i] >= avg)
+		{
+			printf("%dth student's grade is %d\n", i, array[i]);
+		}
+	}*/
+	system("pause");
+}
